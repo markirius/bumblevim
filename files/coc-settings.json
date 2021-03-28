@@ -1,0 +1,25 @@
+{
+  // python
+  "python.pythonPath": "python",
+  "python.venvPath": "~/.venvs/",
+  
+  // jedi
+  "python.jediPath": "~/.venvs/jedi/lib/python3.9/site-packages/",
+  "python.jediEnabled": true,
+  "suggest.timeout": 5000,
+  
+  // formatting
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath":"/home/markirius/.venvs/black/bin/black",
+  
+  // pylint
+  "python.linting.pylintEnabled": false,
+  "python.linting.pylintPath": "/home/markirius/.venvs/pylint/bin/pylint",
+  
+  // flake8
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Path": "/home/markirius/.venvs/flake8/bin/flake8",
+
+  // isort
+  "python.sortImports.path": "/home/markirius/.venvs/isort/bin/isort"
+}
