@@ -74,17 +74,20 @@ update_venvs() {
 vim_powerup() {
     if [[ $(vim --version ) ]]
     then
+        curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
         cp $DIR/files/vimrc $HOME/.vimrc
+    	if [[ ! -d $HOME/.vim/vimrc ]]
+	    then
+	        mkdir -p $HOME/.vim/vimrc
+	    fi
+        cp $DIR/files/rc/*.vimrc $HOME/.vim/vimrc/
         cp $DIR/files/coc-settings.json $HOME/.vim/coc-settings.json
-	if [[ ! -d $HOME/.vim/vimrc ]]
-	then
-	  mkdir -p $HOME/.vim/vimrc
-	fi
-        cp $DIR/files/rc/* $HOME/.vim/vimrc/
-        vim -c :PlugInstall -c sleep 5 -c :qa!
-        vim -c ":CocInstall coc-python" -c "sleep 10" -c qa!
-        vim -c ":CocInstall coc-css" -c "sleep 10" -c qa!
-        vim -c ":CocInstall coc-html" -c "sleep 10" -c :qa!
+        vim -c ":PlugInstall" -c sleep 5 -c :qa!
+        vim -c ":CocInstall coc-python" -c "sleep 5" -c qa!
+        vim -c ":CocInstall coc-css" -c "sleep 5" -c qa!
+        vim -c ":CocInstall coc-html" -c "sleep 5" -c :qa!
+        clear
         echo "[!] Plugins install complete."
     fi
 }
@@ -118,7 +121,6 @@ case "$1" in
         vim_backup
         install_venvs
         vim_powerup
-        vim_update
     ;;
 
     -u | --update)
@@ -134,7 +136,6 @@ case "$1" in
         vim_backup
         install_venvs
         vim_powerup
-        vim_update
     ;;
 
 esac

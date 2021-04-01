@@ -3,7 +3,6 @@ set term=xterm
 set encoding=utf-8
 set nocompatible
 set t_Co=256
-colorscheme codedark
 
 call plug#begin('~/.vim/plugged')
 
@@ -17,9 +16,6 @@ Plug 'preservim/nerdtree'
 
 " https://github.com/mattn/emmet-vim
 Plug 'mattn/emmet-vim'
-
-" https://black.readthedocs.io
-Plug 'psf/black', { 'branch': 'stable' }
 
 " https://github.com/junegunn/fzf.vim
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
