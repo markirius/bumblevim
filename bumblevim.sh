@@ -703,10 +703,9 @@ vim_backup() {
 }
 
 codedark() {
-    if [ ! -d $($HOME/.vim/colors) ]
+    if [[ ! -d $($HOME/.vim/colors) ]]
     then
         mkdir -p $HOME/.vim/colors
-    fi
 cat << EOF > $HOME/.vim/colors/codedark.vim
 " Vim Code Dark (color scheme)
 " https://github.com/tomasiser/vim-code-dark
@@ -1265,7 +1264,8 @@ call <sid>hi('yamlConstant', s:cdBlue, {}, 'none', {})
 call <sid>hi('CocExplorerIndentLine', s:cdCursorDark, {}, 'none', {})
 EOF
 
-sed -i '9 a colorscheme codedark' $HOME/.vimrc
+        sed -i '9 a colorscheme codedark' $HOME/.vimrc
+    fi
 }
 
 case "$1" in
