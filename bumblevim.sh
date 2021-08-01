@@ -25,25 +25,25 @@ packages() {
 }
 
 validate() {
-    if [ ! $(node --version) ]
+    if [[ ! $(node --version) ]]
     then
         echo "[!] Please install nodejs."
         exit()
     fi
 
-    if [ ! $(npm --version) ]
+    if [[ ! $(npm --version) ]]
     then
         echo "[!] Please install npm."
         exit()
     fi
 
-    if [ ! $(python --version) ]
+    if [[ ! $(python --version) ]]
     then
         echo "[!] Please install python 3."
         exit()
     fi
 
-    if [ ! $(pip --version) ]
+    if [[ ! $(pip --version) ]]
     then
         echo "[!] Please install python pip."
         exit()
