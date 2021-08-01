@@ -703,7 +703,7 @@ vim_backup() {
 }
 
 codedark() {
-    if [[ ! -d $($HOME/.vim/colors) ]]
+    if [[ ! -d $HOME/.vim/colors ]]
     then
         mkdir -p $HOME/.vim/colors
 cat << EOF > $HOME/.vim/colors/codedark.vim
