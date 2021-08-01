@@ -1290,7 +1290,7 @@ case "$1" in
         write_csharp_rc
     ;;
 
-    --csharp )
+    --codedark )
         codedark
     ;;
 
