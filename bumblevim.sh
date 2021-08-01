@@ -111,9 +111,6 @@ set encoding=utf-8
 set nocompatible
 set t_Co=256
 
-colorscheme codedark
-let g:airline_theme = 'codedark'
-
 call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
@@ -664,7 +661,7 @@ vim_powerup() {
 	then
 	    mkdir -p $HOME/.vim/vimrc
 	fi
-        if [[ ! $(node --help) || ! $(npm --help) ]]
+        if [[ $(node --help) || $(npm --help) ]]
         then
             write_vimrc
             write_coc_settings
