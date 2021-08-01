@@ -28,25 +28,25 @@ validate() {
     if [[ ! $(node --version) ]]
     then
         echo "[!] Please install nodejs."
-        exit()
+        exit
     fi
 
     if [[ ! $(npm --version) ]]
     then
         echo "[!] Please install npm."
-        exit()
+        exit
     fi
 
     if [[ ! $(python --version) ]]
     then
         echo "[!] Please install python 3."
-        exit()
+        exit
     fi
 
     if [[ ! $(pip --version) ]]
     then
         echo "[!] Please install python pip."
-        exit()
+        exit
     fi
 }
 
