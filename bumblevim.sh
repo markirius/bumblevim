@@ -703,9 +703,9 @@ vim_backup() {
 }
 
 codedark() {
-    if [ ! -d $($HOME/.vim) ]
+    if [ ! -d $($HOME/.vim/colors) ]
     then
-        mkdir $HOME/.vim/colors
+        mkdir -p $HOME/.vim/colors
     fi
 cat << EOF > $HOME/.vim/colors/codedark.vim
 " Vim Code Dark (color scheme)
