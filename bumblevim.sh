@@ -150,7 +150,6 @@ source $HOME/.vim/vimrc/python.vimrc
 source $HOME/.vim/vimrc/nerdtree.vimrc
 source $HOME/.vim/vimrc/web.vimrc
 source $HOME/.vim/vimrc/bash.vimrc
-source $HOME/.vim/vimrc/csharp.vimrc
 source $HOME/.vim/vimrc/autoclose.vimrc
 EOF
 }
@@ -643,6 +642,7 @@ au BufRead,BufNewFile *.cs
     \ set fileformat=unix |
     \ set retab |
 EOF
+    sed -i '$ a source $HOME/.vim/vimrc/csharp.vimrc' $HOME/.vimrc
 }
 
 write_all_rc() {
