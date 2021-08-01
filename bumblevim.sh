@@ -24,6 +24,32 @@ packages() {
     echo pylint
 }
 
+validate() {
+    if [ ! $(node --version) ]
+    then
+        echo "[!] Please install nodejs."
+        exit()
+    fi
+
+    if [ ! $(npm --version) ]
+    then
+        echo "[!] Please install npm."
+        exit()
+    fi
+
+    if [ ! $(python --version) ]
+    then
+        echo "[!] Please install python 3."
+        exit()
+    fi
+
+    if [ ! $(pip --version) ]
+    then
+        echo "[!] Please install python pip."
+        exit()
+    fi
+}
+
 helptext() {
     echo "
     -i --install     install vim files and some venvs
@@ -679,6 +705,7 @@ vim_backup() {
 case "$1" in
 
     -i | --install)
+        validate
         vim_backup
         install_venvs
         vim_powerup
@@ -698,6 +725,7 @@ case "$1" in
     ;;
 
     *)
+        validate
         vim_backup
         install_venvs
         vim_powerup
