@@ -643,6 +643,9 @@ au BufRead,BufNewFile *.cs
     \ set retab |
 EOF
     sed -i '$ a source $HOME/.vim/vimrc/csharp.vimrc' $HOME/.vimrc
+
+    vim -c ":CocInstall coc-html" -c "sleep 5" -c :qa!
+    
 }
 
 write_all_rc() {
