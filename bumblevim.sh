@@ -449,8 +449,8 @@ endif
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-" Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+" Use [g and ]g to navigate diagnostics
+" Use :CocDiagnostics to get all diagnostics of current buffer in location list.
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
@@ -672,7 +672,7 @@ vim_powerup() {
             write_vimrc
             write_coc_settings
             write_all_rc
-            vim -c ":PlugInstall" -c sleep 5 -c :qa!
+            vim -c ":PlugInstall" -c "sleep 5" -c :qa!
             vim -c ":CocInstall coc-python" -c "sleep 5" -c qa!
             vim -c ":CocInstall coc-css" -c "sleep 5" -c qa!
             vim -c ":CocInstall coc-html" -c "sleep 5" -c :qa!
